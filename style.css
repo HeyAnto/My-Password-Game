@@ -1,0 +1,159 @@
+:root {
+  --dark-color: #06080d;
+  --white-color: #fff;
+  --grey-color: #9d9d9d;
+  --blue-color: #004ecc;
+  --green-color: #155724;
+  --bg-green-color: #d4edda;
+  --red-color: #721c24;
+  --bg-red-color: #f8d7da;
+}
+
+::selection {
+  color: var(--white-color);
+  background: var(--dark-color);
+}
+
+/* Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-align {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap10 {
+  gap: 10px;
+}
+
+.gap20 {
+  gap: 20px;
+}
+
+.margin-top100 {
+  margin-top: 100px;
+}
+
+.margin-top20 {
+  margin-top: 20px;
+}
+
+/* Font */
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url(src/BDOGrotesk-VF.ttf) format("truetype");
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 40px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 30px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 25px;
+}
+
+/* Content */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: var(--white-color);
+  color: var(--dark-color);
+  font-family: "BDO Grotesk", sans-serif;
+  box-sizing: border-box;
+  margin: 50px;
+}
+
+header,
+section {
+  max-width: 500px;
+  width: 100%;
+}
+
+/* App */
+input {
+  padding: 15px 20px;
+  border: solid var(--grey-color) 1px;
+  border-radius: 8px;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border: solid var(--dark-color) 1px;
+}
+
+.rule {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid var(--grey-color) 1px;
+  border-radius: 8px;
+}
+
+.rule.valid {
+  background-color: var(--bg-green-color);
+  color: var(--green-color);
+  border-color: var(--green-color);
+}
+
+.rule.invalid {
+  background-color: var(--bg-red-color);
+  color: var(--red-color);
+  border-color: var(--red-color);
+}
+
+/* Button Link */
+.button-link {
+  width: fit-content;
+  color: var(--blue-color);
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: transparent solid 1px;
+}
+
+.button-link img {
+  height: 10px;
+}
+
+.button-link:hover {
+  border-bottom: var(--blue-color) solid 1px;
+}
+
+@media screen and (max-width: 425px) {
+  h1 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 40px;
+  }
+
+  body {
+    margin: 10px;
+  }
+}

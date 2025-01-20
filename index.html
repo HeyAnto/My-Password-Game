@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Password Game</title>
+
+    <link rel="icon" type="image/svg+xml" href="src/favico.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="flex flex-column flex-align">
+        <header class="flex flex-column flex-align">
+            <h1 style="text-align: center;">My Password Game</h1>
+            <div class="flex flex-row flex-align flex-wrap gap20">
+                <a class="button-link" href="https://github.com/HeyAnto/My-Password-Game" target="_blank">
+                    Projet GitHub
+                    <img src="src/icon-link.svg" alt="Icone">
+                </a>
+                <a class="button-link" href="https://neal.fun/password-game/" target="_blank">
+                    The Password Game
+                    <img src="src/icon-link.svg" alt="Icone">
+                </a>
+            </div>
+        </header>
+        <section class="flex flex-column gap10 margin-top100">
+            <label for="password">Veuillez choisir un mot de passe</label>
+            <input type="text" id="password" autocomplete="off">
+        </section>
+
+        <section class="flex flex-column gap10 margin-top20" id="second-password-section" style="display: none;">
+            <label for="second-password">Réécrivez votre mot de passe</label>
+            <input type="text" id="second-password" autocomplete="off">
+        </section>
+        <section class="flex flex-column gap10 margin-top20" id="final-message" style="display: none;">
+            <p>Bravo vous avez créé un mot de passe complètement inutile, merci pour votre temps.
+                (vous pouvez recharger la page)</p>
+        </section>
+
+        <section class="flex flex-column gap10 margin-top20">
+            <div id="rules"></div>
+        </section>
+    </main>
+</body>
+
+<script src="script.js"></script>
+
+</html>
