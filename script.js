@@ -45,10 +45,9 @@ const rules = [
   },
   {
     title: "Règle 7",
-    text: "Votre mot de passe doit inclure un de nos sponsors : Simplon, XavierNiel, Free, EDF, Veolia ou LeGouvernement.",
-    validate: (password) =>
-      /(Simplon|XavierNiel|Free|EDF|LeGouvernement|Veolia)/i.test(password),
-    content: null,
+    text: "Votre mot de passe doit inclure un de nos sponsors : Simplon, Veolia ou Xavier",
+    validate: (password) => /(Simplon|Xavier|Veolia)/i.test(password),
+    content: "src/img/sponsors.webp",
   },
   {
     title: "Règle 8",
@@ -431,7 +430,7 @@ const rules = [
     title: "Règle 13",
     text: "Résolvez le captcha :",
     validate: (password) => password.includes("gf9wxX1"),
-    content: "src/Captcha.png",
+    content: "src/img/captcha.webp",
   },
   {
     title: "Règle 14",
