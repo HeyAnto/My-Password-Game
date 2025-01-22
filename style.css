@@ -153,6 +153,12 @@ input:focus {
     line-height: 40px;
   }
 
+  h2 {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 30px;
+  }
+
   body {
     margin: 10px;
   }
