@@ -57,7 +57,7 @@ const rules = [
   },
   {
     title: "Règle 9",
-    text: "Les chiffres romains de votre mot de passe doivent multiplier pour donner 35.",
+    text: "Les chiffres romains de votre mot de passe doivent s'additionner pour donner 35.",
     validate: (password) => {
       const romanToNumber = {
         I: 1,
@@ -72,18 +72,12 @@ const rules = [
       const romanDigits = password.match(/[IVXLCDM]/g);
       if (!romanDigits) return false;
 
-      const validCombinations = [
-        ["V", "X", "X"], // V * X * X = 35
-        ["X", "V"], // X * V = 35
-      ];
+      const sum = romanDigits.reduce(
+        (acc, digit) => acc + romanToNumber[digit],
+        0
+      );
 
-      for (let combo of validCombinations) {
-        if (combo.every((digit) => romanDigits.includes(digit))) {
-          return true;
-        }
-      }
-
-      return false;
+      return sum === 35;
     },
     content: null,
   },
@@ -207,15 +201,20 @@ const rules = [
         Fm: 100,
       };
 
-      const elementRegex = /[A-Z][a-z]?/g;
+      const sortedElements = Object.keys(elementNumbers).sort(
+        (a, b) => b.length - a.length
+      );
+
+      const elementRegex = new RegExp(sortedElements.join("|"), "g");
+
       const elements = password.match(elementRegex);
 
       if (!elements) return false;
 
-      const sum = elements.reduce((acc, curr) => {
-        const element = curr[0].toUpperCase() + curr.slice(1).toLowerCase();
-        return acc + (elementNumbers[element] || 0);
-      }, 0);
+      const sum = elements.reduce(
+        (acc, element) => acc + elementNumbers[element],
+        0
+      );
 
       return sum === 200;
     },
